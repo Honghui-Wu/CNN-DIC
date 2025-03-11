@@ -1,2 +1,2 @@
 # CNN-DIC
- CNN for Digital Image Correlation
+ Convolution Neural Network for Digital Image Correlation
