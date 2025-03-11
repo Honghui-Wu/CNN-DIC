@@ -156,7 +156,7 @@ def train_dic_model(data_dir="generated_data", epochs=2, batch_size=1, lr=1e-3):
     return model
 
 ###################################
-# 3) Evaluation Routine
+# 4) Evaluation Routine
 ###################################
 def evaluate_model(model, data_dir="generated_data"):
     """
