@@ -90,7 +90,7 @@ if __name__ == "__main__":
         np.save(f"{save_data_path}/displacement_u_{idx}.npy", u)
         np.save(f"{save_data_path}/displacement_v_{idx}.npy", v)
 
-        print(f"Sample {idx} saved: reference_image, deformed_deformed, u, v.")
+        print(f"Sample {idx} saved: reference_image, deformed_image, u, v.")
 
     
     '''Visualization'''
