@@ -3,6 +3,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 from scipy.ndimage import map_coordinates
+from scipy.interpolate import griddata
 import os
 
 class SpeckleDataGenerator():
@@ -51,7 +52,11 @@ class SpeckleDataGenerator():
         Y_new = Y + v
         
         # Apply the transformation using interpolation
-        deformed_image = map_coordinates(image, [Y_new.ravel(), X_new.ravel()], order=1).reshape(image.shape)
+        # # Backward displacements
+        # deformed_image = map_coordinates(image, [Y_new.ravel(), X_new.ravel()], order=1).reshape(image.shape)
+
+        # Forward displacements
+        deformed_image = griddata((X_new.ravel(), Y_new.ravel()), image.ravel(), (X, Y), method='linear', fill_value=0)
         
         return deformed_image, u, v
         
@@ -64,7 +69,7 @@ if __name__ == "__main__":
     os.makedirs(save_data_path, exist_ok=True)
 
     # Define number of samples to be generated 
-    num_samples = 16
+    num_samples = 1
     # Define shape of the image
     image_width, image_height = 512, 512
 
