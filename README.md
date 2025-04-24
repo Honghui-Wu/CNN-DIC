@@ -3,7 +3,7 @@
  generate_data_from_ABAQUS.py: Training data generation from ABAQUS simulated cvs files  
  generate_data_DeepDIC: Training data generation using the method from paper DeepDIC  
  generate_data_DeepDIC_realistic.py: To make the generated reference and deformed image pairs more realistic and solve any bug in data shape and data type:
-1. Speckles realism:  
+ 1. Speckles realism:  
       1.1. The speckles are both circles and ellipses.  
       1.2. The density of speckles is randomized.  
       1.3. 50% of the image pairs have grayscale variation of speckles.  
