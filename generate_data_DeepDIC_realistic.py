@@ -7,8 +7,12 @@ import os
 
 def local_gaussian_deformations(X, Y, num_gauss_deform):
     shape = X.shape
-    u_gx = u_gy = np.zeros(shape)
-    du_gxdx = du_gydy = du_gxdy = du_gydx = np.zeros(shape)
+    u_gx = np.zeros(shape)
+    u_gy = np.zeros(shape)
+    du_gxdx = np.zeros(shape)
+    du_gydy = np.zeros(shape)
+    du_gxdy = np.zeros(shape)
+    du_gydx = np.zeros(shape)
     for _ in range(num_gauss_deform):
         # randomize parameters
         A_x = random.uniform(0.003, 0.6)
