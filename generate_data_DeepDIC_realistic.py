@@ -137,8 +137,8 @@ class SpeckleDataGenerator():
         # Compute displacement fields
         uv = R @ ( D @ XY + u_g ) + T     
         u, v = uv
-        u = u.reshape(self.width, self.height)
-        v = v.reshape(self.width, self.height)
+        u = u.reshape(self.height, self.width)
+        v = v.reshape(self.height, self.width)
 
         # Compute strain fields
         Exx = k_x * np.ones_like(X) + du_gxdx
